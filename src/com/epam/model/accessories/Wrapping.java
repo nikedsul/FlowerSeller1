@@ -91,7 +91,7 @@ public class Wrapping extends BouquetComponentsParent {
      * @param color of a material
      * @param material material of wrapping
      */
-    public Wrapping(int quantity, String color, WrappingMaterials material) {
+    public Wrapping(int quantity, String color, WrappingMaterial material) {
         this.quantity = quantity;
         this.color = color;
         this.purchasingPrice = material.materialPurchasingPrice();

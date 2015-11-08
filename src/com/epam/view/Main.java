@@ -21,7 +21,7 @@ public class Main {
                     new Flower(FlowerName.CHRYSANTHEMUM, 5, "white", FlowerStemLength.LONG),
                     new Flower(FlowerName.CARNATION, 4, "red", FlowerStemLength.NORMAL),
                     new Flower(FlowerName.TULIP, 5, "yellow", FlowerStemLength.EXTRA_LONG),
-                    new Wrapping(2, "red", WrappingMaterials.FELT),
+                    new Wrapping(2, "red", WrappingMaterial.FELT),
                     new GreetingCard(1, true)
                 }
         );
