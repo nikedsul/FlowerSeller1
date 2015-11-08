@@ -68,8 +68,8 @@ public class GreetingCard extends BouquetComponentsParent {
 
     @Override
     public String toString() {
-        return "BouquetComponentsParent: Greeting card. With text: " + (text ? "yes" : "no") + ". Quantity: " + getQuantity()
-                + ". BouquetComponentsParent price: " + getRetailPrice() + ". Total price: " + getTotalPrice();
+        return "Component: Greeting card. With text: " + (text ? "yes" : "no") + ". Quantity: " + getQuantity()
+                + ". Retail price: " + getRetailPrice() + ". Total price: " + getTotalPrice();
     }
 
     /**

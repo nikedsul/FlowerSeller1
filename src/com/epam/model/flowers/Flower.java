@@ -23,7 +23,7 @@ public final class Flower extends BouquetComponentsParent {
     /** Total price of several flowers of this type */
     private double totalPrice;
 
-    private String flowerName;
+    private FlowerName flowerName;
 
     /** Quantity of this type of flowers of the specified color */
     private int quantity;
@@ -32,23 +32,21 @@ public final class Flower extends BouquetComponentsParent {
     private String color;
 
     /** Chosen stemLength of flowers */
-    private int stemLength;
+    private FlowerStemLength stemLength;
 
     /** You can choose the date of entry of the type of flowers in warehouse */
     private Calendar dayOfEntry;
 
     public String getFlowerName() {
-        return flowerName;
+        return flowerName.getFlowerName();
     }
 
     public String getColor() {
-
         return color;
     }
 
     public int getStemLength() {
-
-        return stemLength;
+        return stemLength.getFlowerLength();
     }
 
     @Override
@@ -63,38 +61,33 @@ public final class Flower extends BouquetComponentsParent {
 
     @Override
     public final void setRetailPrice() {
-
         this.retailPrice = purchasingPrice * extraCost * BouquetComponentsParent.VAT;
     }
 
     @Override
     public double getRetailPrice() {
-
         return retailPrice;
     }
 
     @Override
     public void setTotalPrice() {
-
         totalPrice = retailPrice * quantity;
     }
 
     @Override
     public double getTotalPrice() {
-
         return totalPrice;
     }
 
     @Override
     public int getQuantity() {
-
         return quantity;
     }
 
     @Override
     public String toString() {
-        return "BouquetComponentsParent: " + getFlowerName() + ". Color: " + getColor() + ". Quantity: " + getQuantity()
-                + ". BouquetComponentsParent price: " + String.format("%.2f", getRetailPrice())
+        return "Component: " + getFlowerName() + ". Color: " + getColor() + ". Quantity: " + getQuantity()
+                + ". Retail price: " + String.format("%.2f", getRetailPrice())
                 + ". Total price: " + String.format("%.2f", getTotalPrice());
     }
 
@@ -104,13 +97,13 @@ public final class Flower extends BouquetComponentsParent {
      * @param color chosen color of this type of flowers
      * @param stemLength chosen length of this type of flowers in a bouquet
      */
-    public Flower(FlowerNames flowerName, int quantity, String color, FlowerStemLength stemLength) {
-        this.flowerName = flowerName.getFlowerName();
+    public Flower(FlowerName flowerName, int quantity, String color, FlowerStemLength stemLength) {
+        this.flowerName = flowerName;
         this.purchasingPrice = flowerName.flowerPurchasingPrice();
         this.extraCost = flowerName.getExtraCost();
         this.quantity = quantity;
         this.color = color;
-        this.stemLength = stemLength.fLength();
+        this.stemLength = stemLength;
         setRetailPrice();
         setTotalPrice();
         setDayOfEntry();

@@ -81,8 +81,8 @@ public class Wrapping extends BouquetComponentsParent {
 
     @Override
     public String toString() {
-        return "BouquetComponentsParent: Wrapping. Material: " + getMaterial() + ". Color: " + getColor() + ". Quantity: "
-                + getQuantity() + ". BouquetComponentsParent price: " + getRetailPrice() + ". Total price: " + getTotalPrice();
+        return "Component: Wrapping. Material: " + getMaterial() + ". Color: " + getColor() + ". Quantity: "
+                + getQuantity() + ". Retail price: " + getRetailPrice() + ". Total price: " + getTotalPrice();
     }
 
     /**
