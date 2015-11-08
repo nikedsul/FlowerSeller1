@@ -1,6 +1,7 @@
 package com.epam.model.flowers;
 
-import com.epam.model.Item;
+import com.epam.model.BouquetComponentsParent;
+
 import java.util.Calendar;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Calendar;
  * @author  Mykola Sultan
  * @version 1.00 08 november 2015
  */
-public final class Flower extends Item {
+public final class Flower extends BouquetComponentsParent {
 
     /** Purchasing price of this type of flower */
     private double purchasingPrice;
@@ -63,7 +64,7 @@ public final class Flower extends Item {
     @Override
     public final void setRetailPrice() {
 
-        this.retailPrice = purchasingPrice * extraCost * Item.VAT;
+        this.retailPrice = purchasingPrice * extraCost * BouquetComponentsParent.VAT;
     }
 
     @Override
@@ -92,8 +93,8 @@ public final class Flower extends Item {
 
     @Override
     public String toString() {
-        return "Item: " + getFlowerName() + ". Color: " + getColor() + ". Quantity: " + getQuantity()
-                + ". Item price: " + String.format("%.2f", getRetailPrice())
+        return "BouquetComponentsParent: " + getFlowerName() + ". Color: " + getColor() + ". Quantity: " + getQuantity()
+                + ". BouquetComponentsParent price: " + String.format("%.2f", getRetailPrice())
                 + ". Total price: " + String.format("%.2f", getTotalPrice());
     }
 

@@ -1,6 +1,7 @@
 package com.epam.model.bouquet;
 
-import com.epam.model.Item;
+import com.epam.model.BouquetComponentsParent;
+
 import java.util.*;
 
 /**
@@ -8,7 +9,7 @@ import java.util.*;
  * @author  Mykola Sultan
  * @version 1.00 08 november 2015
  */
-public class Bouquet extends Item {
+public class Bouquet extends BouquetComponentsParent {
 
     /** Extra cost for every bouquet assembled */
     private static final double EXTRA_COST = 1.05;
@@ -26,7 +27,7 @@ public class Bouquet extends Item {
     private int quantity;
 
     /** Array of all items of bouquet */
-    Item[] bouquet;
+    BouquetComponentsParent[] bouquet;
 
 
     private Calendar dayOfEntry;
@@ -44,7 +45,7 @@ public class Bouquet extends Item {
     @Override
     public void setRetailPrice() {
 
-        for(Item i : this.bouquet) {
+        for(BouquetComponentsParent i : this.bouquet) {
             this.retailPrice += i.getRetailPrice();
         }
     }
@@ -52,7 +53,7 @@ public class Bouquet extends Item {
     @Override
     public void setTotalPrice() {
 
-        for(Item i : this.bouquet) {
+        for(BouquetComponentsParent i : this.bouquet) {
             this.totalPrice += i.getTotalPrice();
         }
     }
@@ -77,7 +78,7 @@ public class Bouquet extends Item {
         if(bouquet.length != 0) {
             String string = "Your bouquet consists of: \n";
             StringBuffer stringBuffer = new StringBuffer(string);
-            for(Item i : this.bouquet) {
+            for(BouquetComponentsParent i : this.bouquet) {
                 stringBuffer.append(i.toString() + "\n");
             }
             return stringBuffer.toString() + "\nTotal price of the bouquet is " + getTotalPrice()
@@ -92,7 +93,7 @@ public class Bouquet extends Item {
      * @param quantity needed quantity of bouquets
      * @param items array of all components needed for make bouquet
      */
-    public Bouquet(int quantity, Item[] items) {
+    public Bouquet(int quantity, BouquetComponentsParent[] items) {
         this.quantity = quantity;
         this.bouquet = items;
         setRetailPrice();

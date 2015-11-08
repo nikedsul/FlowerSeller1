@@ -1,6 +1,7 @@
 package com.epam.model.accessories;
 
-import com.epam.model.Item;
+import com.epam.model.BouquetComponentsParent;
+
 import java.util.Calendar;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Calendar;
  * @author  Mykola Sultan
  * @version 1.00 08 november 2015
  */
-public class Wrapping extends Item {
+public class Wrapping extends BouquetComponentsParent {
 
     /** Volume of the profit for each wrapping in a bouquet */
     private static final double EXTRA_COST = 2.0;
@@ -55,7 +56,7 @@ public class Wrapping extends Item {
 
     @Override
     public final void setRetailPrice() {
-        this.retailPrice = this.purchasingPrice * EXTRA_COST * Item.VAT;
+        this.retailPrice = this.purchasingPrice * EXTRA_COST * BouquetComponentsParent.VAT;
     }
 
     @Override
@@ -80,8 +81,8 @@ public class Wrapping extends Item {
 
     @Override
     public String toString() {
-        return "Item: Wrapping. Material: " + getMaterial() + ". Color: " + getColor() + ". Quantity: "
-                + getQuantity() + ". Item price: " + getRetailPrice() + ". Total price: " + getTotalPrice();
+        return "BouquetComponentsParent: Wrapping. Material: " + getMaterial() + ". Color: " + getColor() + ". Quantity: "
+                + getQuantity() + ". BouquetComponentsParent price: " + getRetailPrice() + ". Total price: " + getTotalPrice();
     }
 
     /**

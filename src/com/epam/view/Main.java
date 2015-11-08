@@ -1,21 +1,21 @@
 package com.epam.view;
 
 
-import com.epam.model.Item;
+import com.epam.model.BouquetComponentsParent;
 import com.epam.model.accessories.*;
 import com.epam.model.flowers.*;
 import com.epam.model.bouquet.Bouquet;
 
-import java.util.Objects;
-
 /**
- * Created by Nikolai on 07.11.2015.
+ * Class Main print out information in console
+ * @author  Mykola Sultan
+ * @version 1.00 08 november 2015
  */
 public class Main {
     public static void main(String[] args) {
-        Item bouquet = new Bouquet(
+        BouquetComponentsParent bouquet = new Bouquet(
                 1,
-                new Item[] {
+                new BouquetComponentsParent[] {
                     new Flower(FlowerNames.ROSE, 3, "red", FlowerStemLength.EXTRA_LONG),
                     new Flower(FlowerNames.ROSE, 2, "white", FlowerStemLength.EXTRA_SHORT),
                     new Flower(FlowerNames.CHRYSANTHEMUM, 5, "white", FlowerStemLength.LONG),

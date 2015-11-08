@@ -1,6 +1,6 @@
 package com.epam.model.accessories;
 
-import com.epam.model.Item;
+import com.epam.model.BouquetComponentsParent;
 
 import java.util.Calendar;
 
@@ -9,7 +9,7 @@ import java.util.Calendar;
  * @author  Mykola Sultan
  * @version 1.00 08 november 2015
  */
-public class GreetingCard extends Item {
+public class GreetingCard extends BouquetComponentsParent {
 
     /** Volume of the profit for each card in a bouquet */
     private static final double EXTRA_COST = 2.0;
@@ -43,7 +43,7 @@ public class GreetingCard extends Item {
 
     @Override
     public final void setRetailPrice() {
-        this.retailPrice = (PURCHASING_PRICE * EXTRA_COST * Item.VAT) + (text ? 3.0 : 0);
+        this.retailPrice = (PURCHASING_PRICE * EXTRA_COST * BouquetComponentsParent.VAT) + (text ? 3.0 : 0);
     }
 
     @Override
@@ -68,8 +68,8 @@ public class GreetingCard extends Item {
 
     @Override
     public String toString() {
-        return "Item: Greeting card. With text: " + (text ? "yes" : "no") + ". Quantity: " + getQuantity()
-                + ". Item price: " + getRetailPrice() + ". Total price: " + getTotalPrice();
+        return "BouquetComponentsParent: Greeting card. With text: " + (text ? "yes" : "no") + ". Quantity: " + getQuantity()
+                + ". BouquetComponentsParent price: " + getRetailPrice() + ". Total price: " + getTotalPrice();
     }
 
     /**
