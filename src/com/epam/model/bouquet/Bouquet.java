@@ -9,7 +9,7 @@ import java.util.*;
  * @author  Mykola Sultan
  * @version 1.00 08 november 2015
  */
-public class Bouquet extends BouquetComponentsParent {
+public final class Bouquet extends BouquetComponentsParent {
 
     /** Extra cost for every bouquet assembled */
     private static final double EXTRA_COST = 1.05;
